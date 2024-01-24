@@ -53,17 +53,26 @@ newImage('assets/pillar.png', '350px', '100px')
 newImage('assets/crate.png', '150px', '200px');
 newImage('assets/well.png', '500px', '425px');
 
-function newItem(swordSrc, swordLeft, swordBottom, ) {
-    let sword = document.createElement('img');
-    sword.src = swordSrc;
-    sword.style.position = 'fixed';
-    sword.style.left = swordLeft;
-    sword.style.bottom = swordBottom;
-    document.body.append(sword);
+function newItem(swordSrc, swordLeft, swordBottom,
+    shieldSrc, shieldLeft, shieldBottom,
+    staffSrc, staffLeft, staffBottom) {
+    let sword = newImage(swordSrc, swordLeft, swordBottom);
+    let shield = newImage(shieldSrc, shieldLeft, shieldBottom);
+    let staff = newImage(staffSrc, staffLeft, staffBottom);
 
     sword.addEventListener('click', function() {
-        sword.remove()
+    sword.remove()
+    })
+
+    shield.addEventListener('click', function() {
+    shield.remove()
+    })
+
+    staff.addEventListener('click', function() {
+    staff.remove()
     })
 }
-newItem('assets/sword.png', '500px', '405px', '200px')
 
+newItem('assets/sword.png', '500px', '405px');
+newItem('assets/shield.png', '165px', '185px');
+newItem('assets/staff.png', '600x', '100px');
